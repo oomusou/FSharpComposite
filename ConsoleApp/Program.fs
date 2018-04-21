@@ -1,8 +1,17 @@
 ﻿// Learn more about F# at http://fsharp.org
 
 open System
+open ClassLibrary
 
 [<EntryPoint>]
 let main argv =
-    printfn "Hello World from F#!"
-    0 // return an integer exit code
+    [ 
+        Product.macbookPro
+        Product.ipadAir
+        Product.appleWatch
+        Product.appleCombo 
+    ]
+    |> ShoppingCart.calculatePrice 
+    |> printf "%.0f"
+    
+    0
